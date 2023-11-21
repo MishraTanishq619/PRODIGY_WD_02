@@ -43,6 +43,10 @@ const counting = () => {
 var startbtn = document.getElementById("start");
 var pausebtn = document.getElementById("pause");
 var resetbtn = document.getElementById("reset");
+var lapbtn = document.getElementById("lap");
+
+var laps = 0;
+var laplist = document.getElementById("laplist");
 
 startbtn.addEventListener("click", () => {
 	counting();
@@ -60,4 +64,16 @@ resetbtn.addEventListener("click", () => {
 	centiseconds.innerHTML = n(0);
 	min.innerHTML = n(0);
 	seconds.innerHTML = n(0);
+	laplist.innerHTML = "";
+	laps = 0;
+});
+
+lapbtn.addEventListener("click", () => {
+	laps += 1;
+	var item = document.createElement("li");
+	var text = document.createTextNode(
+		`Lap${laps} : ${mins}:${sec}:${centisecs}.`
+	);
+	item.appendChild(text);
+	laplist.appendChild(item);
 });
