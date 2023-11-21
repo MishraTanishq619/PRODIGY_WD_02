@@ -12,11 +12,12 @@ body {
 body {
 	background-color: #520b0b;
 	color: white;
+	display: flex;
 }
 
 #main {
 	height: 80%;
-	width: 70%;
+	width: 50%;
 	background-color: #90df35;
 	margin-inline: auto;
 	margin-top: 5%;
@@ -40,22 +41,25 @@ h2 {
 }
 
 span {
-	font-size: 9rem;
+	font-size: 10vw;
 }
 .time2 {
-	margin: 2rem;
+	margin: 1rem;
 }
 .counting {
-	font-size: 9rem;
+	font-size: 8vw;
 }
 
 #buttons {
 	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .btns {
-	margin: 2rem;
-	font-size: 2rem;
+	margin: 0.3rem;
+	font-size: 1rem;
 	padding-block: 0.7rem;
 	padding-inline: 3rem;
 	border-radius: 25rem;
@@ -65,8 +69,9 @@ span {
 }
 
 #laps {
-	height: 80%;
-	width: 70%;
+	/* height: 80%; */
+	overflow-y: scroll;
+	width: 40%;
 	background-color: #a5e060;
 	margin-inline: auto;
 	padding: 2rem;
@@ -84,4 +89,33 @@ span {
 ul {
 	margin: 2rem;
 	font-size: 2rem;
+}
+
+@media (max-width: 800px) {
+	body {
+		flex-direction: column;
+		overflow-y: scroll;
+	}
+
+	#main {
+		height: 80%;
+		width: 90%;
+	}
+	h2 {
+		font-size: 5rem;
+	}
+
+	.btns {
+		margin: 0.3rem;
+		font-size: 1rem;
+	}
+	#laps {
+		height: 80%;
+		overflow-y: scroll;
+		width: 87%;
+	}
+	#laps h2 {
+		margin-block: 0.3rem;
+		font-size: 3rem;
+	}
 }
